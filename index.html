@@ -11,16 +11,97 @@
     p { color: #4a5568; font-size: 1.1rem; }
     .features { margin: 1.5em 0; }
     .features li { margin-bottom: 0.5em; }
-    form { margin-top: 2em; }
-    input[type=email] { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; margin-bottom: 1em; }
-    button { background: #2563eb; color: #fff; border: none; padding: 12px 24px; border-radius: 6px; font-size: 1rem; cursor: pointer; }
-    .note { color: #64748b; font-size: 0.95em; margin-top: 1em; }
+    .cta-btn {
+      display: block;
+      width: 100%;
+      background: #16a34a;
+      color: #fff;
+      border: none;
+      padding: 16px 0;
+      border-radius: 8px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 1.5em 0 1em 0;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #0001;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: #15803d; }
+    .social-proof {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5em;
+      margin-bottom: 1.2em;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: #2563eb;
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.4em 1.2em;
+      font-size: 1em;
+      font-weight: 600;
+      box-shadow: 0 1px 4px #0001;
+    }
+    .testimonial {
+      font-size: 1em;
+      color: #334155;
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 1em 1.2em;
+      margin: 0.5em 0;
+      border-left: 4px solid #16a34a;
+    }
+    .faq-section {
+      margin-top: 2.5em;
+    }
+    .faq-title {
+      color: #1a202c;
+      font-size: 1.2rem;
+      margin-bottom: 0.7em;
+      font-weight: 600;
+    }
+    .faq-item {
+      margin-bottom: 1em;
+    }
+    .faq-q {
+      cursor: pointer;
+      color: #2563eb;
+      font-weight: 600;
+      margin-bottom: 0.2em;
+      display: block;
+    }
+    .faq-a {
+      color: #334155;
+      font-size: 1em;
+      margin-left: 0.5em;
+      display: none;
+    }
+    .faq-item.open .faq-a {
+      display: block;
+    }
+    .privacy-note {
+      color: #64748b;
+      font-size: 0.93em;
+      margin-top: 1.2em;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .container { max-width: 98vw; padding: 10vw 2vw; }
+      h1 { font-size: 1.4rem; }
+      .features { font-size: 0.98em; }
+      .cta-btn { font-size: 1em; padding: 12px 0; }
+      .badge { font-size: 0.95em; }
+      .testimonial { font-size: 0.97em; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Recoverly</h1>
-  <p><strong>Recover lost sales automatically.</strong> Boost your Shopify store’s revenue with automated abandoned cart recovery via email, SMS, and WhatsApp.</p>
+    <!-- Social proof removed for honesty -->
+    <p><strong>Recover lost sales automatically.</strong> Boost your Shopify store’s revenue with automated abandoned cart recovery via email, SMS, and WhatsApp.</p>
     <ul class="features">
       <li>✅ Automated, personalized recovery messages</li>
       <li>✅ Easy Shopify integration (2 minutes setup)</li>
@@ -28,8 +109,15 @@
       <li>✅ A/B testing for best results</li>
       <li>✅ Multi-channel: Email, SMS, WhatsApp</li>
     </ul>
-  <!-- Google Form Embed -->
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-v8Lj5Kz8rQDgw2Usy8cl8rZVQffSS-opoSO5-jXYv_U9Aw/viewform?embedded=true" width="640" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <button class="cta-btn" onclick="document.getElementById('interest-form').scrollIntoView({behavior: 'smooth'})">Get Early Access</button>
+    <div style="width: 100%; margin: 2em 0;" id="interest-form">
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSd-v8Lj5Kz8rQDgw2Usy8cl8rZVQffSS-opoSO5-jXYv_U9Aw/viewform?embedded=true"
+        width="100%"
+        height="450"
+        style="display: block; margin-left: auto; margin-right: auto; max-width: 100%; min-width: 280px; border: none;"
+        frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
     <div class="note">
       <p>Launching soon • Early adopters get 50% off for 3 months</p>
       <p>Starting at $19/month. No credit card required.</p>
@@ -37,7 +125,7 @@
         No strings attached—signing up with your email just gets you early access updates, with no obligation to buy.
       </p> 
     </div>
-
+  <!-- Testimonials removed for honesty -->
     <section style="margin-top:2.5em; padding:1.5em; background:#f1f5f9; border-radius:10px;">
       <h2 style="color:#1a202c; font-size:1.3rem; margin-bottom:0.5em;">What is Recoverly?</h2>
       <p style="color:#334155; font-size:1.05rem; margin-bottom:1em;">
@@ -51,6 +139,28 @@
       </ul>
       <p style="color:#64748b; font-size:0.98rem;">Perfect for Shopify merchants who want to grow sales with less manual work.</p>
     </section>
+    <div class="faq-section">
+      <div class="faq-title">Frequently Asked Questions</div>
+      <div class="faq-item">
+        <span class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is Recoverly really free to try?</span>
+        <span class="faq-a">Yes! Early access users get 3 months free, no credit card required.</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q" onclick="this.parentElement.classList.toggle('open')">How does Recoverly connect to my Shopify store?</span>
+        <span class="faq-a">You’ll be able to connect your store securely with a single click using Shopify’s official integration.</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I cancel or leave at any time?</span>
+        <span class="faq-a">Absolutely. There’s no obligation, and you can leave or upgrade at any time.</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q" onclick="this.parentElement.classList.toggle('open')">Will you spam me or sell my email?</span>
+        <span class="faq-a">Never. We respect your privacy and will only send you important updates about Recoverly.</span>
+      </div>
+    </div>
+    <div class="privacy-note">
+      <strong>Privacy:</strong> Your email is only used for early access updates. We never share or sell your data.
+    </div>
   </div>
 </body>
 </html>
